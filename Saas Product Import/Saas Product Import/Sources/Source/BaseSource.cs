@@ -31,11 +31,22 @@ namespace Saas_Product_Import.Sources.Source
             return Task.FromResult(reader);
         }
 
-        private Task SaveData(object dataService)
+        private async Task SaveData(IBaseRepository repository)
         {
-            throw new NotImplementedException();
-        }
 
+            foreach (var product in this.Products)
+            {
+                try
+                {
+                    await repository.Create(product);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error while  importing '{product.Title}' product. (ERROR: " + ex.Message + ")");
+                }
+            }
+        }
+           
         protected abstract Task<IList<Product>> Map(string path);
        
     }
