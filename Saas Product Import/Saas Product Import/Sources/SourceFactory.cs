@@ -14,6 +14,7 @@ namespace Saas_Product_Import.Sources
             {
                 case Constants.Capterra:
                     return new Capterra();
+                /*Other providers to be added here*/
                 default:
                     throw new Exception("Undefined Source");
             }

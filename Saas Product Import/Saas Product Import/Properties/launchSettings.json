@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Saas Product Import": {
+      "commandName": "Project",
+      "commandLineArgs": "\"capterra\" \"capterra.yaml\""
+    }
+  }
+}

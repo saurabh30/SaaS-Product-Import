@@ -19,7 +19,7 @@ namespace Saas_Product_Import
             {
                 var sourceType = args[0];
                 var filePath = args[1];
-
+                /*Change only concrete implementaion to switch to mongo.*/
                 var serviceCollection = new ServiceCollection().AddScoped<IBaseRepository, SQLRepository>();
                 var serviceProvider = serviceCollection.BuildServiceProvider();
                 var repository = serviceProvider.GetService<IBaseRepository>();
@@ -34,6 +34,9 @@ namespace Saas_Product_Import
             {
                 Console.WriteLine("Exception: " + ex.Message);
             }
+
+            Console.ReadKey();
+
         }
     }
 
