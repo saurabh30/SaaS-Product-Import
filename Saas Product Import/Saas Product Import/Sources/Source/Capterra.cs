@@ -15,7 +15,7 @@ namespace Saas_Product_Import.Sources.Source
         protected async override Task<IList<Product>> Map(string path)
         {
             var file = await this.GetFileFromSource(path);
-            /*This to be replaced by actual data*/
+            /*This to be replaced by doing parsing on actual data*/
             return  new List<Product>() { new Product { } };
         }
     }
